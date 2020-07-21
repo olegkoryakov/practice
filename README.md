@@ -8,6 +8,10 @@
 
 В текущей реализации нужно ввести в поле <code>.selection-sort__input-field</code> последовательность чисел. Допускается вводить через пробел или запятую. В момент наступления события change на этом поле данные считаются и заполнят элемент <code>.selection-sort__array</code> элементами <code>.selection-sort__item</code>.
 
+### notice 
+
+Для корректной работы приложения используйте chrome.
+
 ## Используемые технологии
 
 * [TypeScript](https://www.typescriptlang.org/ "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.")
