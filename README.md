@@ -21,4 +21,4 @@
 * <code>npm run dev</code> для запуска локального дев сервера
 
 ## Demo
-**[клик ми!](https://olegkoryakov.github.io/practice/dist/)**
+**[клик ми!](https://olegkoryakov.github.io/practice/dist/index.html)**
