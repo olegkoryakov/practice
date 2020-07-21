@@ -5,7 +5,6 @@
 }
 
 .selection-sort__input-box {
-  width: 300px;
   margin: 0 auto;
   margin-bottom: 40px;
 }
@@ -115,8 +114,4 @@
     transition: all 1s ease;
     background-color: $succesColor;
   }
-}
-
-.selection-sort__about {
-  width: 300px;
 }
