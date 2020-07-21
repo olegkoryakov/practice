@@ -1,0 +1,34 @@
+.description {
+  margin: 0 auto;
+  width: max-content;
+}
+
+.description__title {
+  font-family: $otherLvlHeadingFont;
+  font-size: 25px;
+  text-align: center;
+}
+
+.description__list {
+
+}
+
+.description__item {
+  position: relative;
+  padding-left: 30px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 10px;
+    transform-origin: center;
+    transform: translateY(-50%) rotate(45deg);
+    
+    box-sizing: border-box;
+    width: 10px;
+    height: 20px;
+    border: 1px solid $succesColor;
+    border-top: none;
+    border-left: none;
+  }
+}

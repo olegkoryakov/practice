@@ -1,0 +1,10 @@
+include ../selection-sort/selection-sort
+include ../description/description
+include ../author/author
+
+mixin practice()
+  section.practice(class = attributes.class)
+    h1.practice__title Practice
+    +description().practice__description
+    +selection-sort().practice__selection-sort
+    +author().practice__author

@@ -1,0 +1,122 @@
+.selection-sort__title {
+  font-family: $otherLvlHeadingFont;
+  font-size: 30px;
+  text-align: center;
+}
+
+.selection-sort__input-box {
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.selection-sort__input-title {
+  font-family: $otherLvlHeadingFont;
+  font-size: 25px;
+  text-align: center;
+}
+
+.selection-sort__input-field {
+  width: 100%;
+}
+
+.selection-sort__legend-list {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  margin-bottom: 40px;
+}
+
+.selection-sort__legend-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100px;
+}
+
+.selection-sort__legend-item-example {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  &--sorted {
+    background-color: $succesColor;
+  }
+  &--unsorted {
+    background-color: #fff;
+  }
+}
+
+
+.selection-sort__input-field {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+
+  border-bottom: 2px solid $succesColor;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  &:invalid {
+    border-color: $failColor;
+  }
+}
+
+.selection-sort__array {
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.selection-sort__item {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--swap-transition {
+    transition: all 1s ease;
+  }
+}
+
+.selection-sort__item-value {
+  position: relative;
+  z-index: 1;
+}
+
+.selection-sort__item-bg {
+  position: absolute;
+  border-radius: 4px;
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
+  z-index: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  &--sorted {
+    transition: all 1s ease;
+    background-color: $succesColor;
+  }
+}
+
+.selection-sort__about {
+  width: 300px;
+}

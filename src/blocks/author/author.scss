@@ -1,0 +1,72 @@
+.author {
+  position: relative;
+  z-index: 1;
+  border-radius: 1.5px;
+  width: 150px;
+  padding: 5px;
+  text-align: center;
+  background-color: $bgColor;
+  transform-style: preserve-3d;
+  &:before {
+    content: '';
+    border-radius: 3px;
+    transform: translateZ(-1px);
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    bottom: -3px;
+    right: -3px;
+    background-image: linear-gradient(
+      -45deg,
+      orange,
+      pink,
+      indigo,
+      violet
+    );
+    background-size: 300% 300%;
+  }
+}
+
+.author__advantages {
+  border-right: 1px solid white;
+}
+
+.author__text {
+  margin: 0;
+}
+
+@keyframes blink-effect {
+  from { border-right-color: transparent; }
+  to { border-right-color: transparent; }
+  50% { border-right-color: white; }
+}
+
+@keyframes gradient-border {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.author__advantages {
+  animation-name: blink-effect;
+  animation-iteration-count: infinite;
+  animation-timing-function: step-end;
+  animation-duration: 0.5s;
+}
+
+.author {
+  &:before {
+    animation-name: gradient-border;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+  }
+}
