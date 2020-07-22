@@ -18,6 +18,10 @@
 
 * [ESLint](https://eslint.org/ "Find and fix problems in your JavaScript code")
 
+* [Scss/sass](https://sass-scss.ru/ "Sass является наиболее развитым и стабильным расширением CSS профессионального уровня")
+
+* [Pug/Jade](https://pugjs.org/api/getting-started.html "Препроцессор HTML и шаблонизатор, который был написан на JavaScript для Node.js.")
+
 * [Webpack](https://webpack.js.org/ "Webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging")
 
 ## Установка 
