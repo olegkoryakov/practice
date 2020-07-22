@@ -5,11 +5,19 @@ export default class SelectionSortController implements ISelectionSortController
   ) {
     this.model = model;
     this.view = view;
+
+    this.view.on('change-values', this.changeValues.bind(this));
   }
 
   private view: ISelectionSortView;
 
   private model: ISelectionSortModel;
+
+  private changeValues(values: Array<number>) {
+    this.model.setArray(values);
+    this.view.renderArray(values);
+    this.sortArray();
+  }
 
   private async sortArray() {
     this.model.sortArray();
@@ -31,11 +39,5 @@ export default class SelectionSortController implements ISelectionSortController
         await this.view.markSortedSequence(second);
       }
     }
-  }
-
-  init(userArray: Array<number>) {
-    this.model.setArray(userArray);
-    this.view.renderArray(userArray);
-    this.sortArray();
   }
 }

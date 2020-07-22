@@ -7,14 +7,13 @@ interface ISelectionSortModel {
   getIndexesToSwapArray(): TIndexesToSwapArray,
 }
 
-interface ISelectionSortView {
+interface ISelectionSortView extends IEventEmitter{
   renderArray(array: Array<number>): void,
   swapAnimation(firstIndex: number, secondIndex: number): Promise<void>,
   markSortedSequence(endIndexOfSortedSequence?: number): Promise<unknown>,
 }
 
 interface ISelectionSortController {
-  init(userArray: Array<number>): void;
 }
 
 interface ISelectionSort {

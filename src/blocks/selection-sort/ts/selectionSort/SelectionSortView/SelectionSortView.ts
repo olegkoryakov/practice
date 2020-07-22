@@ -1,8 +1,16 @@
-export default class SelectionSortView implements ISelectionSortView {
-  constructor(parentElement: HTMLUListElement) {
+import EventEmitter from '../../../../../ts/EventEmitter/EventEmitter';
+
+export default class SelectionSortView extends EventEmitter implements ISelectionSortView {
+  constructor(parentElement: HTMLUListElement, inputElement: HTMLInputElement) {
+    super();
     this.parentElement = parentElement;
+    this.inputElement = inputElement;
     this.lItems = [];
+
+    this.inputElement.addEventListener('change', this.onInputChange.bind(this));
   }
+
+  private inputElement: HTMLInputElement;
 
   private parentElement: HTMLUListElement;
 
@@ -35,6 +43,29 @@ export default class SelectionSortView implements ISelectionSortView {
     const temp = firstElementValueElement.textContent;
     firstElementValueElement.textContent = secondElementValueElement.textContent;
     secondElementValueElement.textContent = temp;
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  private isCorrectValues(values: Array<number>) {
+    const isCorrectValues = !values.some((value) => Number.isNaN(value));
+    return isCorrectValues;
+  }
+
+  private onInputChange() {
+    const regExp = new RegExp(',?\\s');
+    let values: string | Array<number> = this.inputElement.value;
+
+    if (values !== '') {
+      values = values.split(regExp).map((value) => parseInt(value, 10));
+      const isCorrectValues = this.isCorrectValues(values);
+
+      if (isCorrectValues) {
+        this.inputElement.setCustomValidity('');
+        this.emit('change-values', values);
+      } else {
+        this.inputElement.setCustomValidity('please, enter correct values');
+      }
+    }
   }
 
   renderArray(array: Array<number>) {
